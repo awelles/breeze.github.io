@@ -57,7 +57,7 @@ The `EntityType` is a container for metadata that describe a Breeze entity type.
 
 Perhaps most importantly, the `EntityType` knows how to create new instances of an entity type. We used that feature a moment a go when we called its *`createEntity` *method. We got hold of an EntityType object for TodoItems from the EntityManager's *metadatastore* with this line.
 
-    var todoType = manager.metadataStore.getEntityType('TodoItem');</pre>
+    var todoType = manager.metadataStore.getEntityType('TodoItem');
 
 We could get metadata from the `EntityManager` for good reason: the `EntityManager` needs type information too. It needs type information to materialize entities out of raw data from the query result payload. You'll search the sample code in vain looking for the `TodoItem` definition in JavaScript. You won't find it. Nor will you find a component to translate between DTOs (data transfer objects) and entities; there is no `TodoItemDtoMapper` in this code base.
 
@@ -66,7 +66,7 @@ The `EntityType` is the mapper. The EntityType both defines and creates new Todo
 ## Creating a Breeze entity
 What happens when we call ...
 
-    var newTodo = todoType.createEntity(initialValues);</pre>
+    var newTodo = todoType.createEntity(initialValues);
 
 We'll cover the fundamentals now and leave details and nuances for a later.
 The `createEntity` first invokes a Breeze default parameterless constructor to make the new Todo object [<a href="#note 2">2</a>]. The new Todo has the following characteristics:
